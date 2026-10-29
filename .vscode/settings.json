@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src/main"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "html.validate.scripts": false,
+    "files.exclude": {
+        "**/bin": true
+    }
+}

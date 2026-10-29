@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Empleados</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        .form-container { background: white; padding: 25px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; margin-top: 20px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #218838; }
+        .link-listar { display: block; text-align: center; margin-top: 15px; color: #007bff; text-decoration: none; font-weight: bold; }
+        .link-listar:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Registro de Empleado</h2>
+    <!-- Envio por metodo POST al Servlet -->
+    <form action="EmpleadoServlet" method="POST">
+        <label for="documento">Documento / Cedula:</label>
+        <input type="text" id="documento" name="documento" required>
+
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo Electronico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+
+        <label for="cargo">Cargo / Rol:</label>
+        <select id="cargo" name="cargo" required>
+            <option value="Administrador">Administrador</option>
+            <option value="Desarrollador">Desarrollador</option>
+            <option value="Analista">Analista</option>
+            <option value="Soporte">Soporte</option>
+        </select>
+
+        <button type="submit">Guardar Empleado</button>
+    </form>
+    
+    <!-- Envio por metodo GET con parametro accion=listar al Servlet -->
+    <a href="EmpleadoServlet?accion=listar" class="link-listar">Ver Lista de Empleados (GET)</a>
+</div>
+
+</body>
+</html>
